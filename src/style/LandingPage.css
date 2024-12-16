@@ -1,0 +1,107 @@
+@keyframes blob {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(calc(150px * var(--direction-x)), calc(150px * var(--direction-y)));
+    }
+  }
+  
+  .animate-blob {
+    animation: blob 2s infinite;
+  }
+  
+  .animation-fast {
+    animation-duration: 1.5s;
+  }
+  
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .bg-purple-600,
+  .bg-blue-500 {
+    opacity: 0.85; /* Increased opacity for better visibility */
+  }
+  
+  /* Custom movement for each ball */
+  .bg-purple-600 {
+    --direction-x: 1;
+    --direction-y: 1;
+  }
+  
+  .bg-blue-500 {
+    --direction-x: -1;
+    --direction-y: -1;
+  }
+  
+  .bg-blue-400 {
+    --direction-x: 1;
+    --direction-y: -1;
+  }
+  
+  /* Optional: Use a lighter blend mode for better visibility */
+  .bg-purple-600,
+  .bg-blue-500,
+  .bg-teal-400 {
+    mix-blend-mode: screen; /* Screen blend mode makes colors pop */
+  }
+  
+  @keyframes borderGlow {
+    0% {
+      border-color: transparent;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+    50% {
+      border-color: white; /* Blue color */
+      box-shadow: 0 0 15px gray;
+    }
+    100% {
+      border-color: transparent;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  .button-border-animation {
+    position: relative;
+    display: inline-block;
+    padding: 16px 32px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: #1f2937; /* Dark background */
+    color: white;
+    font-size: 1.125rem;
+    font-weight: bold;
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.3s;
+    animation: borderGlow 2s infinite ease-in-out; /* Add animation */
+  }
+  
+  .button-border-animation:hover {
+    background-color: white; /* Hover background */
+    color: #fff;
+  }
+  
+  .button-border-animation span {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .button-border-animation span::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: -1;
+    border-radius: 8px;
+  }
+  
+  
