@@ -2,6 +2,7 @@ import React from 'react';
 import '../style/LandingPage.css';
 
 function LandingPage() {
+    
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center px-16">
       <header className="fixed top-0 left-0 w-full bg-transparent z-50">
@@ -86,10 +87,91 @@ function LandingPage() {
         
         {/* neibeidzama scrolla animacija sadala */}
         <section>
-        <div class="w-full inline-flex flex-nowrap">
-            
+    <div class="flex items-center justify-center space-x-10 mt-24">
+        <img 
+        src="https://framerusercontent.com/images/9BXsOCAIoUWa18SOvVKxbkahg.png"
+        />
+
+        <img 
+        src="https://framerusercontent.com/images/UhyrGjyOSvUkVZWBmysfZCg6s4.png"
+        />
+
+        <img 
+        src="https://framerusercontent.com/images/axEbQrKhpYjJigPMinun2ajkc.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/hqIVsN8SplywoxNsCXdrELqh3Uc.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/ZCcbDAFfIHYrHLOqtVLKQXAIGY.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/PFfPRPqCnleo77thxuLEpUUjB0.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/Qs7RpNfTc6MXJVwxIY8QzQDhQ.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/vXxrIZDFEdcYsaqEYWnpcVYilU.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/T9PpAagNI1pVt63DYJjSH5ViE.png"
+        />
+
+        <img
+        src="https://framerusercontent.com/images/neJyiCkJGsL33q9aEvjzzHMKHo.png"
+        />
+    </div>
+</section>
+
+<section>
+    <div class="container mx-auto px-4">
+
+    </div>
+</section>
+
+<section className = "pt-20">
+<div className="max-w-4xl mx-auto bg-gradient-to-br from-gray-900 to-gray-800 text-white rounded-3xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-lg">
+   
+      <div className="flex-1">
+        <h2 className="text-3xl font-semibold mb-4">
+          Modernizing a Subscription Management Platform
+        </h2>
+        <p className="text-gray-400 mb-6 leading-relaxed">
+          With a user-centered approach, the goal was to create an intuitive
+          interface for effortless financial management while incorporating
+          gamification.
+        </p>
+        <button className="px-6 py-2 bg-gray-700 hover:bg-gray-600 rounded-full text-white font-medium">
+          View case study
+        </button>
+      </div>
+
+      <div className="flex-1 flex flex-col items-center">
+        <img
+          src="https://framerusercontent.com/images/82V0lDZt5IN8w9i1157kfT8pSU.jpg?scale-down-to=512"
+         
+        />
+        <div className="flex justify-between w-full text-center">
+          <div>
+            <p className="text-gray-400 text-sm">Engagement</p>
+            <p className="text-2xl font-semibold">12 min</p>
+          </div>
+          <div>
+            <p className="text-gray-400 text-sm">User Satisfaction</p>
+            <p className="text-2xl font-semibold">4.5*</p>
+          </div>
         </div>
-        </section>
+      </div>
+    </div>
+</section>
+
       </div>
     </div>
   );
