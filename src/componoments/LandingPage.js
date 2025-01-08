@@ -5,7 +5,7 @@ function LandingPage() {
     
   return (
     <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center px-16">
-      <header className="fixed top-0 left-0 w-full bg-transparent z-50">
+      <header className="static top-0 left-0 w-full bg-transparent z-50">
   <div className="container mx-auto px-6 py-4 flex items-center justify-between">
     <div className="text-white font-bold text-2xl">
       <img
@@ -54,6 +54,7 @@ function LandingPage() {
     </div>
   </div>
 </header>
+
 
 
       <div className="relative w-full max-w-lg mt-20"> 
@@ -121,7 +122,7 @@ function LandingPage() {
 
 
 
-        <section class="flex justify-center mt-24 w-[100%]">
+     <section class="flex justify-center mt-24 w-[100%]">
     <div class="flex bg-gray-900 w-max-w-[1200px] rounded-xl p-16 border border-gray-800 overflow-hidden">
         <div class="absolute bg-green-400 blur-2xl rounded-full opacity-15 w-full"></div>
         <div class="relative z-10">
@@ -238,6 +239,7 @@ function LandingPage() {
     </div>
 </section>
 
+
 <section class="flex justify-center mt-24 w-[100%]">
     <div class="flex bg-gray-900 w-max-w-[1000px] rounded-xl p-16 border border-gray-800 overflow-hidden">
         <div class="absolute bg-green-400 blur-2xl rounded-full opacity-15 w-full"></div>
@@ -276,6 +278,158 @@ function LandingPage() {
         </div>
     </div>
 </section>
+
+<section className="py-8">
+  <div className="min-h-[30vh] p-4 flex items-center justify-center">
+    <div className="max-w-3xl text-white text-lg md:text-2xl font-light leading-relaxed space-y-4">
+      <p className="flex flex-wrap gap-2 items-center">
+        Web designer and expert in
+        <span className="bg-black/90 px-4 py-2 rounded-full inline-flex items-center">
+          UX/UI Design
+        </span>
+        with over
+      </p>
+      
+      <p className="flex flex-wrap gap-2 items-center">
+        <span className="bg-black/90 px-4 py-2 rounded-full inline-flex items-center">
+          15 years
+        </span>
+        of industry experience. Expertise extends to
+      </p>
+      
+      <p className="flex flex-wrap gap-2 items-center">
+        <span className="bg-black/90 px-4 py-2 rounded-full inline-flex items-center">
+          Framer Development
+        </span>
+        enabling him to create
+      </p>
+      
+      <p className="flex flex-wrap gap-2 items-center">
+        both aesthetically pleasing and easily implementable.
+      </p>
+      
+      <p className="flex flex-wrap gap-2 items-center">
+        Currently works as
+        <span className="bg-black/90 px-4 py-2 rounded-full inline-flex items-center">
+          Product Designer
+        </span>
+        at FLYR Hospitality
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section className="py-8 px-4">
+  <div className="max-w-7xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="h-16 flex items-center justify-center">
+          <img
+            src="https://framerusercontent.com/images/sQyyAhcgUbXckfoqQWM3dTteTA.png?scale-down-to=1024"
+            alt="PerkUp Logo"
+            className="max-h-full w-auto"
+          />
+        </div>
+        <blockquote className="text-white text-lg font-light">
+          &quot;He consistently exceeds our expectations&quot;
+        </blockquote>
+      </div>
+
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="h-16 flex items-center justify-center">
+          <img
+            src="https://framerusercontent.com/images/fATWoAolell4ae2UFdw2TeBM28.png"
+            alt="S Logo"
+            className="max-h-full w-auto"
+          />
+        </div>
+        <blockquote className="text-white text-lg font-light">
+          &quot;I recommend Goran whole-heartedly&quot;
+        </blockquote>
+      </div>
+
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="h-16 flex items-center justify-center">
+          <img
+            src="https://framerusercontent.com/images/rbcCSj5wo7EivYt5qpyuab4GMg.png?scale-down-to=512"
+            alt="ISMS Connect Logo"
+            className="max-h-full w-auto"
+          />
+        </div>
+        <blockquote className="text-white text-lg font-light">
+          &quot;Loved to work with Goran!&quot;
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section className="py-16">
+  <div className="p-8">
+    <div className="text-4xl font-bold mb-4 text-white">Skills</div>
+    <div className="flex flex-wrap gap-4">
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">UX Design</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">UI Design</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Product Design</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Consulting</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Design Systems</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Front-End Development</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Workshops</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Design Sprint</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Interaction Design</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">User Testing</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Usability Testing</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">UX Research</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Leadership</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">Mentoring</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">No-Code</div>
+      <div className="px-4 py-2 bg-[#0F151F] rounded-full text-center text-white">+ More</div>
+    </div>
+  </div>
+</section>
+
+<section className="min-h-screen text-white p-8 md:p-16">
+      <h1 className="text-[56px] font-light mb-32">Experience</h1>
+      
+      <div className="space-y-24">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-[42px] font-light opacity-90">Design Lead</h2>
+          <div className="text-right">
+            <span className="block text-[42px] text-gray-300">Geonode</span>
+            <span className="block text-2xl text-gray-400 mt-2">Jan 2020 - Jan 2023</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-[42px] font-light opacity-90">Lead UX/UI Designer</h2>
+          <div className="text-right">
+            <span className="block text-[42px] text-gray-300">Truely</span>
+            <span className="block text-2xl text-gray-400 mt-2">Jan 2018 - Jan 2020</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-[42px] font-light opacity-90">Senior Product Designer</h2>
+          <div className="text-right">
+            <span className="block text-[42px] text-gray-300">Nicey Consulting</span>
+            <span className="block text-2xl text-gray-400 mt-2">Jun 2016 - Present</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <h2 className="text-[42px] font-light opacity-90">Co-Founder</h2>
+          <div className="text-right">
+            <span className="block text-[42px] text-gray-300">BrandingMag</span>
+            <span className="block text-2xl text-gray-400 mt-2">Jan 2011 - Jun 2015</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
 
 
 
