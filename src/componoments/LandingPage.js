@@ -103,10 +103,14 @@ function LandingPage() {
 
 
 <div className="relative w-full max-w-lg mt-10 sm:mt-20">
-  <div className="absolute -left-4 w-40 h-40 sm:w-72 sm:h-72 bg-purple-600 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast"></div>
-  <div className="absolute -right-4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-500 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast animation-delay-1000"></div>
-  <div className="absolute left-10 w-40 h-40 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast animation-delay-2000"></div>
+  {/* Fixed and Centered Blobs */}
+  <div className="fixed inset-0 flex items-center justify-center pointer-events-none">
+    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast"></div>
+    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast animation-delay-1000"></div>
+    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-blue-400 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast animation-delay-2000"></div>
+  </div>
 
+  {/* Content */}
   <div className="m-4 sm:m-8 relative space-y-4">
     <div className="flex justify-center">
       <img
@@ -136,6 +140,8 @@ function LandingPage() {
     </button>
   </div>
 </div>
+
+
 
 
 <section className="relative w-full mt-10 overflow-hidden">
@@ -198,136 +204,95 @@ function LandingPage() {
 <section className="relative w-full mt-24">
   <div className="flex flex-col gap-12 sm:gap-16">
 
-    {/* First Card */}
-    <div className="sticky top-0 bg-gray-900 rounded-xl p-6 sm:p-16 border border-gray-800 transform transition-transform duration-200 hover:scale-105">
-      <div className="absolute inset-0 bg-green-400 blur-2xl rounded-full opacity-15"></div>
-      <div className="relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
-          <div className="flex-1 sm:w-1/2">
-            <h3 className="text-2xl sm:text-4xl text-white mb-4">Modernizing a Subscription Management Platform</h3>
-            <p className="text-gray-500 text-lg sm:text-xl mb-6">
-              With a user-centered approach, the goal was to create an intuitive interface for effortless financial management while incorporating gamification.
-            </p>
-          </div>
-          <div className="text-center sm:text-left">
-            <img
-              src="https://framerusercontent.com/images/82V0lDZt5IN8w9i1157kfT8pSU.jpg?scale-down-to=1024"
-              className="max-w-[300px] sm:max-w-[500px]"
-              alt="project-image"
-            />
-            <div className="mt-4 text-white">
-              <p className="text-sm sm:text-lg">Engagement User Satisfaction</p>
-              <p className="text-sm sm:text-lg">12min 4.5*</p>
+    {/* Card Template */}
+    {[
+      {
+        title: "Modernizing a Subscription Management Platform",
+        description:
+          "With a user-centered approach, the goal was to create an intuitive interface for effortless financial management while incorporating gamification.",
+        imageUrl:
+          "https://framerusercontent.com/images/82V0lDZt5IN8w9i1157kfT8pSU.jpg?scale-down-to=1024",
+        metrics: ["Engagement User Satisfaction", "12min 4.5*"],
+        linkText: "View case study",
+        linkUrl: "./work/modernization-of-a-subscription-management-platform",
+      },
+      {
+        title: "Revamping an E-Commerce Website",
+        description:
+          "Focus was to create a user-friendly interface that simplified the process of accessing premium operational web scraping proxies.",
+        imageUrl:
+          "https://framerusercontent.com/images/8ZlsEfjDITR5nOu3Yn61F22cbg.jpg?scale-down-to=1024",
+        metrics: ["Usability User Retention", "85% 70%"],
+        linkText: "View case study",
+        linkUrl: "./work/modernization-of-a-subscription-management-platform",
+      },
+      {
+        title: "Developing a Mobile Health Tracking App",
+        description:
+          "Leading Bitcoin Data and Stats site. Live price action, monitor on-chain data, and track key economic indicators.",
+        imageUrl:
+          "https://framerusercontent.com/images/Y1hHthCTPz6YNLIhonp2E5s5WU.jpg?scale-down-to=1024",
+        metrics: ["Conversion Rate User Satisfaction", "12% 4.8*"],
+        linkText: "View case study",
+        linkUrl: "./work/modernization-of-a-subscription-management-platform",
+      },
+      {
+        title: "Optimizing a Corporate Intranet",
+        description:
+          "An innovative app and approach for taking advantage of unused internet from people's devices. It differs from others because of its simplicity, functions, and ways to earn extra money.",
+        imageUrl:
+          "https://framerusercontent.com/images/UlzZi7Dd7txMrOquJLbf9wyEiig.jpg?scale-down-to=1024",
+        metrics: ["Conversion Rate User Satisfaction", "20% 95%"],
+        linkText: "Coming Soon",
+        linkUrl: "./work/modernization-of-a-subscription-management-platform",
+      },
+    ].map((card, index) => (
+      <div
+        key={index}
+        className="sticky top-0 bg-gray-900 rounded-xl p-6 sm:p-16 border border-gray-800 transform transition-transform duration-200 hover:scale-105"
+      >
+        <div className="absolute inset-0 bg-green-400 blur-2xl rounded-full opacity-15"></div>
+        <div className="relative z-10">
+          <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start gap-6 sm:gap-12">
+            <div className="flex-1 sm:w-1/2">
+              <h3 className="text-2xl sm:text-4xl text-white mb-4">
+                {card.title}
+              </h3>
+              <p className="text-gray-500 text-lg sm:text-xl mb-6">
+                {card.description}
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <div className="relative w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] overflow-hidden rounded-lg">
+                <img
+                  src={card.imageUrl}
+                  className="object-cover w-full h-full"
+                  alt="project-image"
+                />
+              </div>
+              <div className="mt-4 text-white">
+                {card.metrics.map((metric, idx) => (
+                  <p key={idx} className="text-sm sm:text-lg">
+                    {metric}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-        <div className="mt-6">
-          <a href="./work/modernization-of-a-subscription-management-platform"
-             className="inline-block bg-gray-900 border border-gray-700 rounded-xl shadow-md text-center px-6 py-3 sm:px-8 sm:py-4 text-white hover:bg-gray-800"> 
-            View case study
-          </a>
+          <div className="mt-6">
+            <a
+              href={card.linkUrl}
+              className="inline-block bg-gray-900 border border-gray-700 rounded-xl shadow-md text-center px-6 py-3 sm:px-8 sm:py-4 text-white hover:bg-gray-800"
+            >
+              {card.linkText}
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-
-    {/* Second Card */}
-    <div className="sticky top-0 bg-gray-900 rounded-xl p-6 sm:p-16 border border-gray-800 transform transition-transform duration-200 hover:scale-105">
-      <div className="absolute inset-0 bg-green-400 blur-2xl rounded-full opacity-15"></div>
-      <div className="relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
-          <div className="flex-1 sm:w-1/2">
-            <h3 className="text-2xl sm:text-4xl text-white mb-4">Revamping an E-Commerce Website</h3>
-            <p className="text-gray-500 text-lg sm:text-xl mb-6">
-              Focus was to create a user-friendly interface that simplified the process of accessing premium operational web scraping proxies.
-            </p>
-          </div>
-          <div className="text-center sm:text-left">
-            <img
-              src="https://framerusercontent.com/images/8ZlsEfjDITR5nOu3Yn61F22cbg.jpg?scale-down-to=1024"
-              className="max-w-[300px] sm:max-w-[500px]"
-              alt="project-image"
-            />
-            <div className="mt-4 text-white">
-              <p className="text-sm sm:text-lg">Usability User Retention</p>
-              <p className="text-sm sm:text-lg">85% 70%</p>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <a href="./work/modernization-of-a-subscription-management-platform"
-             className="inline-block bg-gray-900 border border-gray-700 rounded-xl shadow-md text-center px-6 py-3 sm:px-8 sm:py-4 text-white hover:bg-gray-800"> 
-            View case study
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* Third Card */}
-    <div className="sticky top-0 bg-gray-900 rounded-xl p-6 sm:p-16 border border-gray-800 transform transition-transform duration-200 hover:scale-105">
-      <div className="absolute inset-0 bg-green-400 blur-2xl rounded-full opacity-15"></div>
-      <div className="relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
-          <div className="flex-1 sm:w-1/2">
-            <h3 className="text-2xl sm:text-4xl text-white mb-4">Developing a Mobile Health Tracking App</h3>
-            <p className="text-gray-500 text-lg sm:text-xl mb-6">
-              Leading Bitcoin Data and Stats site. Live price action, monitor on-chain data, and track key economic indicators.
-            </p>
-          </div>
-          <div className="text-center sm:text-left">
-            <img
-              src="https://framerusercontent.com/images/Y1hHthCTPz6YNLIhonp2E5s5WU.jpg?scale-down-to=1024"
-              className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover"
-              alt="project-image"
-            />
-            <div className="mt-4 text-white">
-              <p className="text-sm sm:text-lg">Conversion Rate User Satisfaction</p>
-              <p className="text-sm sm:text-lg">12% 4.8*</p>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <a href="./work/modernization-of-a-subscription-management-platform"
-             className="inline-block bg-gray-900 border border-gray-700 rounded-xl shadow-md text-center px-6 py-3 sm:px-8 sm:py-4 text-white hover:bg-gray-800"> 
-            View case study
-          </a>
-        </div>
-      </div>
-    </div>
-
-    {/* Fourth Card */}
-    <div className="sticky top-0 bg-gray-900 rounded-xl p-6 sm:p-16 border border-gray-800 transform transition-transform duration-200 hover:scale-105">
-      <div className="absolute inset-0 bg-green-400 blur-2xl rounded-full opacity-15"></div>
-      <div className="relative z-10">
-        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start">
-          <div className="flex-1 sm:w-1/2">
-            <h3 className="text-2xl sm:text-4xl text-white mb-4">Optimizing a Corporate Intranet</h3>
-            <p className="text-gray-500 text-lg sm:text-xl mb-6">
-              An innovative app and approach for taking advantage of unused internet from people's devices. It differs from others because of its simplicity, functions, and ways to earn extra money.
-            </p>
-          </div>
-          <div className="text-center sm:text-left">
-            <img
-              src="https://framerusercontent.com/images/UlzZi7Dd7txMrOquJLbf9wyEiig.jpg?scale-down-to=1024"
-              className="w-[300px] sm:w-[400px] h-[200px] sm:h-[300px] object-cover"
-              alt="project-image"
-            />
-            <div className="mt-4 text-white">
-              <p className="text-sm sm:text-lg">Conversion Rate User Satisfaction</p>
-              <p className="text-sm sm:text-lg">20% 95%</p>
-            </div>
-          </div>
-        </div>
-        <div className="mt-6">
-          <a href="./work/modernization-of-a-subscription-management-platform"
-             className="inline-block bg-gray-900 border border-gray-700 rounded-xl shadow-md text-center px-6 py-3 sm:px-8 sm:py-4 text-white hover:bg-gray-800"> 
-            Coming Soon
-          </a>
-        </div>
-      </div>
-    </div>
-
+    ))}
   </div>
 </section>
+
 
 
 
@@ -445,111 +410,152 @@ function LandingPage() {
   </div>
 </section>
 
-<section className="min-h-screen text-white p-8 md:p-16">
-      <h1 className="text-[56px] font-light mb-32">Experience</h1>
-      
-      <div className="space-y-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <h2 className="text-[42px] font-light opacity-90">Design Lead</h2>
-          <div className="text-right">
-            <span className="block text-[42px] text-gray-300">Geonode</span>
-            <span className="block text-2xl text-gray-400 mt-2">Jan 2020 - Jan 2023</span>
-          </div>
-        </div>
+<section className="min-h-screen text-white p-6 sm:p-8 md:p-16">
+  <h1 className="text-3xl sm:text-4xl md:text-[56px] font-light mb-16 sm:mb-24">Experience</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <h2 className="text-[42px] font-light opacity-90">Lead UX/UI Designer</h2>
-          <div className="text-right">
-            <span className="block text-[42px] text-gray-300">Truely</span>
-            <span className="block text-2xl text-gray-400 mt-2">Jan 2018 - Jan 2020</span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <h2 className="text-[42px] font-light opacity-90">Senior Product Designer</h2>
-          <div className="text-right">
-            <span className="block text-[42px] text-gray-300">Nicey Consulting</span>
-            <span className="block text-2xl text-gray-400 mt-2">Jun 2016 - Present</span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <h2 className="text-[42px] font-light opacity-90">Co-Founder</h2>
-          <div className="text-right">
-            <span className="block text-[42px] text-gray-300">BrandingMag</span>
-            <span className="block text-2xl text-gray-400 mt-2">Jan 2011 - Jun 2015</span>
-          </div>
-        </div>
+  <div className="space-y-16 sm:space-y-24">
+    <div className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+      <h2 className="text-2xl sm:text-3xl md:text-[42px] font-light opacity-90">
+        Design Lead
+      </h2>
+      <div className="text-left sm:text-right">
+        <span className="block text-xl sm:text-2xl md:text-[42px] text-gray-300">
+          Geonode
+        </span>
+        <span className="block text-sm sm:text-lg md:text-2xl text-gray-400 mt-1">
+          Jan 2020 - Jan 2023
+        </span>
       </div>
-    </section>
-
-    <section>
-    <div className="min-h-screen p-8">
-        <div className="max-w-4xl mx-auto">
-            <div className="text-white text-5xl font-light mb-16">Blog</div>
-            
-            {/* pirma bilde blog sadala */}
-            <div className="group cursor-pointer">
-                <div className="flex gap-8 mb-12">
-                    <div className="w-64 h-40 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-blue-200 via-pink-200 to-blue-200">
-                        <img src="https://framerusercontent.com/images/LRNzrbcrRDBJ0JszkJzxPBakkPw.jpg?scale-down-to=512" alt="Blog Post 1" className="w-full h-full object-cover"/>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                        <div className="text-gray-400 mb-2">Sep 5, 2023</div>
-                        <div className="text-white text-3xl font-light group-hover:text-gray-300 transition-colors">
-                            The Benefits of Using Free Framer Templates
-                        </div>
-                    </div>
-                </div>
-                <div className="h-px bg-gray-800 mb-12"></div>
-            </div>
-
-            {/* otraa */}
-            <div className="group cursor-pointer">
-                <div className="flex gap-8 mb-12">
-                    <div className="w-64 h-40 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-b from-pink-200 to-blue-200">
-                        <img src="https://framerusercontent.com/images/KMjg7IZncg1lzgObKZfV9sWxxYM.jpg?scale-down-to=1024" alt="Blog Post 2" className="w-full h-full object-cover"/>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                        <div className="text-gray-400 mb-2">Sep 4, 2023</div>
-                        <div className="text-white text-3xl font-light group-hover:text-gray-300 transition-colors">
-                            How to Customize Free Framer Templates to Fit Your Brand
-                        </div>
-                    </div>
-                </div>
-                <div className="h-px bg-gray-800 mb-12"></div>
-            </div>
-
-            {/* Tresssaa */}
-            <div className="group cursor-pointer">
-                <div className="flex gap-8 mb-12">
-                    <div className="w-64 h-40 rounded-2xl overflow-hidden flex-shrink-0 bg-gradient-to-br from-red-800 to-red-600">
-                        <img src="https://framerusercontent.com/images/ovbOvxTe7o4FDCaxu51bTPIsLvU.jpg?scale-down-to=2048" alt="Blog Post 3" className="w-full h-full object-cover"/>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                        <div className="text-gray-400 mb-2">Sep 3, 2023</div>
-                        <div className="text-white text-3xl font-light group-hover:text-gray-300 transition-colors">
-                            Top 5 Free Framer Templates for Startups
-                        </div>
-                    </div>
-                </div>
-                <div className="h-px bg-gray-800 mb-12"></div>
-            </div>
-
-            <div className="flex justify-center">
-                <div className="bg-[#0F151F] inline-block px-6 py-3 rounded-full text-white hover:bg-black/40 transition-colors cursor-pointer">
-                    View More
-                </div>
-            </div>
-        </div>
     </div>
+
+    <div className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+      <h2 className="text-2xl sm:text-3xl md:text-[42px] font-light opacity-90">
+        Lead UX/UI Designer
+      </h2>
+      <div className="text-left sm:text-right">
+        <span className="block text-xl sm:text-2xl md:text-[42px] text-gray-300">
+          Truely
+        </span>
+        <span className="block text-sm sm:text-lg md:text-2xl text-gray-400 mt-1">
+          Jan 2018 - Jan 2020
+        </span>
+      </div>
+    </div>
+
+    <div className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+      <h2 className="text-2xl sm:text-3xl md:text-[42px] font-light opacity-90">
+        Senior Product Designer
+      </h2>
+      <div className="text-left sm:text-right">
+        <span className="block text-xl sm:text-2xl md:text-[42px] text-gray-300">
+          Nicey Consulting
+        </span>
+        <span className="block text-sm sm:text-lg md:text-2xl text-gray-400 mt-1">
+          Jun 2016 - Present
+        </span>
+      </div>
+    </div>
+
+    <div className="space-y-4 sm:grid sm:grid-cols-2 sm:gap-4 sm:space-y-0">
+      <h2 className="text-2xl sm:text-3xl md:text-[42px] font-light opacity-90">
+        Co-Founder
+      </h2>
+      <div className="text-left sm:text-right">
+        <span className="block text-xl sm:text-2xl md:text-[42px] text-gray-300">
+          BrandingMag
+        </span>
+        <span className="block text-sm sm:text-lg md:text-2xl text-gray-400 mt-1">
+          Jan 2011 - Jun 2015
+        </span>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section className='min-h-screen text-white p-8 md:p-16'>
-  <h1 className='text-[56px] font-light mb-32'>Frequently asked questions</h1>
-  <div className='space-y-28'>
-    <div className="flex items-center justify-between text-gray-300 px-6 py-4 rounded-lg shadow-md">
-      <span className="text-xl font-medium">What is your design process?</span>
+
+<section>
+  <div className="min-h-screen p-4 md:p-8">
+    <div className="max-w-4xl mx-auto">
+      <div className="text-white text-3xl md:text-5xl font-light mb-8 md:mb-16">Blog</div>
+
+      {/* First Blog Post */}
+      <div className="group cursor-pointer">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-12">
+          <div className="w-full md:w-64 h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-blue-200 via-pink-200 to-blue-200 flex-shrink-0">
+            <img
+              src="https://framerusercontent.com/images/LRNzrbcrRDBJ0JszkJzxPBakkPw.jpg?scale-down-to=512"
+              alt="Blog Post 1"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-gray-400 mb-2 text-sm md:text-base">Sep 5, 2023</div>
+            <div className="text-white text-2xl md:text-3xl font-light group-hover:text-gray-300 transition-colors">
+              The Benefits of Using Free Framer Templates
+            </div>
+          </div>
+        </div>
+        <div className="h-px bg-gray-800 mb-8 md:mb-12"></div>
+      </div>
+
+      {/* Second Blog Post */}
+      <div className="group cursor-pointer">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-12">
+          <div className="w-full md:w-64 h-40 rounded-2xl overflow-hidden bg-gradient-to-b from-pink-200 to-blue-200 flex-shrink-0">
+            <img
+              src="https://framerusercontent.com/images/KMjg7IZncg1lzgObKZfV9sWxxYM.jpg?scale-down-to=1024"
+              alt="Blog Post 2"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-gray-400 mb-2 text-sm md:text-base">Sep 4, 2023</div>
+            <div className="text-white text-2xl md:text-3xl font-light group-hover:text-gray-300 transition-colors">
+              How to Customize Free Framer Templates to Fit Your Brand
+            </div>
+          </div>
+        </div>
+        <div className="h-px bg-gray-800 mb-8 md:mb-12"></div>
+      </div>
+
+      {/* Third Blog Post */}
+      <div className="group cursor-pointer">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-8 mb-8 md:mb-12">
+          <div className="w-full md:w-64 h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-red-800 to-red-600 flex-shrink-0">
+            <img
+              src="https://framerusercontent.com/images/ovbOvxTe7o4FDCaxu51bTPIsLvU.jpg?scale-down-to=2048"
+              alt="Blog Post 3"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="flex flex-col justify-center">
+            <div className="text-gray-400 mb-2 text-sm md:text-base">Sep 3, 2023</div>
+            <div className="text-white text-2xl md:text-3xl font-light group-hover:text-gray-300 transition-colors">
+              Top 5 Free Framer Templates for Startups
+            </div>
+          </div>
+        </div>
+        <div className="h-px bg-gray-800 mb-8 md:mb-12"></div>
+      </div>
+
+      <div className="flex justify-center">
+        <div className="bg-[#0F151F] inline-block px-4 md:px-6 py-2 md:py-3 rounded-full text-white hover:bg-black/40 transition-colors cursor-pointer">
+          View More
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className="min-h-screen text-white p-4 md:p-16">
+  <h1 className="text-[36px] md:text-[56px] font-light mb-16 md:mb-32">
+    Frequently Asked Questions
+  </h1>
+  <div className="space-y-16 md:space-y-28">
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-gray-300 px-4 md:px-6 py-4 rounded-lg shadow-md">
+      <span className="text-base md:text-xl font-medium mb-2 md:mb-0">
+        What is your design process?
+      </span>
       <button className="text-gray-400 hover:text-gray-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -559,14 +565,15 @@ function LandingPage() {
           stroke="currentColor"
           strokeWidth={2}
         >
-            
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
     </div>
 
-    <div className="flex items-center justify-between text-gray-300 px-6 py-4 rounded-lg shadow-md">
-      <span className="text-xl font-medium">What tools and software do you use for UX design?</span>
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-gray-300 px-4 md:px-6 py-4 rounded-lg shadow-md">
+      <span className="text-base md:text-xl font-medium mb-2 md:mb-0">
+        What tools and software do you use for UX design?
+      </span>
       <button className="text-gray-400 hover:text-gray-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -576,14 +583,15 @@ function LandingPage() {
           stroke="currentColor"
           strokeWidth={2}
         >
-            
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
     </div>
 
-    <div className="flex items-center justify-between text-gray-300 px-6 py-4 rounded-lg shadow-md">
-      <span className="text-xl font-medium">How do you mesure the success of your UX designs?</span>
+    <div className="flex flex-col md:flex-row items-start md:items-center justify-between text-gray-300 px-4 md:px-6 py-4 rounded-lg shadow-md">
+      <span className="text-base md:text-xl font-medium mb-2 md:mb-0">
+        How do you measure the success of your UX designs?
+      </span>
       <button className="text-gray-400 hover:text-gray-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -593,7 +601,6 @@ function LandingPage() {
           stroke="currentColor"
           strokeWidth={2}
         >
-            
           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
         </svg>
       </button>
@@ -601,15 +608,16 @@ function LandingPage() {
   </div>
 </section>
 
+
 <section>
   <div className="flex items-center justify-center min-h-screen bg-gray-900">
-    <div className="relative max-w-6xl w-full p-16 bg-slate-800 text-center text-white rounded-[10rem] group overflow-hidden">
+    <div className="relative max-w-6xl w-full p-8 md:p-16 bg-slate-800 text-center text-white rounded-3xl md:rounded-[10rem] group overflow-hidden">
       {/* Background and hover effect */}
       <div className="absolute inset-0 bg-slate-800 group-hover:bg-orange-500 group-hover:bg-opacity-40 transition-all duration-500"></div>
 
       {/* Main Content */}
       <div className="relative z-10">
-        <h1 className="text-5xl font-semibold mb-8">
+        <h1 className="text-3xl md:text-5xl font-semibold mb-6 md:mb-8">
           Upgrade your web presence with Framer
         </h1>
         <div className="flex flex-col items-center">
@@ -617,26 +625,25 @@ function LandingPage() {
             <img
               src="https://contra.com/static/embed/media/hiremeoncontra-light.png"
               alt="Hire Me on Contra"
-              className="h-auto w-auto"
+              className="h-auto w-auto max-w-full"
             />
           </button>
-          <div className="flex items-center justify-center mt-6">
+          <div className="flex items-center justify-center mt-4 md:mt-6">
             <img
               src="https://framerusercontent.com/images/vq9vnuJruUyplvTmweJBT00k1I.jpg?scale-down-to=512"
               alt="Profile"
-              className="w-10 h-10 rounded-full mr-3"
+              className="w-8 h-8 md:w-10 md:h-10 rounded-full mr-2 md:mr-3"
             />
-            <p className="text-lg text-gray-400">
+            <p className="text-sm md:text-lg text-gray-400">
               Goran Babarogic - Framer Developer
             </p>
           </div>
         </div>
       </div>
-
-      
     </div>
   </div>
 </section>
+
 
 
 
