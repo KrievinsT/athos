@@ -103,5 +103,10 @@
     z-index: -1;
     border-radius: 8px;
   }
+
+  section {
+    background-image: none ;
+  }
+  
   
   

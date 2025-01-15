@@ -4,7 +4,8 @@ import '../style/LandingPage.css';
 function LandingPage() {
     
   return (
-    <div className="bg-gray-900 min-h-screen flex flex-col items-center justify-center px-16">
+    <div className="bg-black min-h-screen flex flex-col items-center justify-center px-16">
+            <img src = "/images/white-noise-1920-x-1080-wallpaper-1wh7gq8010no3mp0.jpg" className = "w-screen h-screen fixed opacity-[5%] top-0 "></img>
      <header className="static top-0 left-0 w-full bg-transparent z-50">
   <div className="container mx-auto px-6 py-4 flex items-center justify-between">
     <div className="text-white font-bold text-2xl">
@@ -103,14 +104,10 @@ function LandingPage() {
 
 
 <div className="relative w-full max-w-lg mt-10 sm:mt-20">
-  {/* Fixed and Centered Blobs */}
-  <div className="fixed inset-0 flex items-center justify-center pointer-events-none">
-    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-purple-600 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast"></div>
-    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-blue-500 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast animation-delay-1000"></div>
-    <div className="absolute w-64 h-64 sm:w-96 sm:h-96 bg-blue-400 rounded-full mix-blend-screen filter blur-2xl opacity-10 animate-blob animation-fast animation-delay-2000"></div>
-  </div>
+  <div className="absolute -left-4 w-40 h-40 sm:w-72 sm:h-72 bg-purple-600 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast"></div>
+  <div className="absolute -right-4 w-40 h-40 sm:w-72 sm:h-72 bg-blue-500 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast animation-delay-1000"></div>
+  <div className="absolute left-10 w-40 h-40 sm:w-72 sm:h-72 bg-blue-400 rounded-full mix-blend-screen filter blur-xl opacity-80 animate-blob animation-fast animation-delay-2000"></div>
 
-  {/* Content */}
   <div className="m-4 sm:m-8 relative space-y-4">
     <div className="flex justify-center">
       <img
@@ -140,8 +137,6 @@ function LandingPage() {
     </button>
   </div>
 </div>
-
-
 
 
 <section className="relative w-full mt-10 overflow-hidden">
@@ -609,11 +604,11 @@ function LandingPage() {
 </section>
 
 
-<section>
-  <div className="flex items-center justify-center min-h-screen bg-gray-900">
-    <div className="relative max-w-6xl w-full p-8 md:p-16 bg-slate-800 text-center text-white rounded-3xl md:rounded-[10rem] group overflow-hidden">
-      {/* Background and hover effect */}
-      <div className="absolute inset-0 bg-slate-800 group-hover:bg-orange-500 group-hover:bg-opacity-40 transition-all duration-500"></div>
+<section className="relative">
+  <div className="flex items-center justify-center min-h-screen">
+    <div className="relative max-w-6xl w-full p-8 md:p-16 bg-slate-800 bg-opacity-90 text-center text-white rounded-3xl md:rounded-[10rem] group overflow-hidden">
+      {/* Background hover effect */}
+      <div className="absolute inset-0 group-hover:bg-orange-500 group-hover:bg-opacity-40 transition-all duration-500 rounded-3xl md:rounded-[10rem]"></div>
 
       {/* Main Content */}
       <div className="relative z-10">
@@ -643,6 +638,9 @@ function LandingPage() {
     </div>
   </div>
 </section>
+
+
+
 
 
 
